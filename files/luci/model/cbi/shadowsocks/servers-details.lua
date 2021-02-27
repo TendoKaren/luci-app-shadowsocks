@@ -5,25 +5,10 @@ local m, s, o
 local shadowsocks = "shadowsocks"
 local sid = arg[1]
 local encrypt_methods = {
-	"rc4-md5",
-	"aes-128-cfb",
-	"aes-192-cfb",
-	"aes-256-cfb",
-	"aes-128-ctr",
-	"aes-192-ctr",
-	"aes-256-ctr",
 	"aes-128-gcm",
 	"aes-192-gcm",
 	"aes-256-gcm",
-	"camellia-128-cfb",
-	"camellia-192-cfb",
-	"camellia-256-cfb",
-	"bf-cfb",
-	"salsa20",
-	"chacha20",
-	"chacha20-ietf",
 	"chacha20-ietf-poly1305",
-	"xchacha20-ietf-poly1305",
 }
 
 m = Map(shadowsocks, "%s - %s" %{translate("ShadowSocks"), translate("Edit Server")})

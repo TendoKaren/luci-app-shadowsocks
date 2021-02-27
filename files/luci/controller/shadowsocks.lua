@@ -12,24 +12,24 @@ function index()
 		alias("admin", "services", "shadowsocks", "general"),
 		_("ShadowSocks"), 10)
 	page.dependent = true
-	page.acl_depends = { "luci-app-shadowsocks" }
+	page.acl_depends = { "luci-app-shadowsocks-mod" }
 
 	page = entry({"admin", "services", "shadowsocks", "general"},
 		cbi("shadowsocks/general"),
 		_("General Settings"), 10)
 	page.leaf = true
-	page.acl_depends = { "luci-app-shadowsocks" }
+	page.acl_depends = { "luci-app-shadowsocks-mod" }
 
 	page = entry({"admin", "services", "shadowsocks", "status"},
 		call("action_status"))
 	page.leaf = true
-	page.acl_depends = { "luci-app-shadowsocks" }
+	page.acl_depends = { "luci-app-shadowsocks-mod" }
 
 	page = entry({"admin", "services", "shadowsocks", "servers"},
 		arcombine(cbi("shadowsocks/servers"), cbi("shadowsocks/servers-details")),
 		_("Servers Manage"), 20)
 	page.leaf = true
-	page.acl_depends = { "luci-app-shadowsocks" }
+	page.acl_depends = { "luci-app-shadowsocks-mod" }
 
 	if luci.sys.call("command -v ss-redir >/dev/null") ~= 0 then
 		return
@@ -39,7 +39,7 @@ function index()
 		cbi("shadowsocks/access-control"),
 		_("Access Control"), 30)
 	page.leaf = true
-	page.acl_depends = { "luci-app-shadowsocks" }
+	page.acl_depends = { "luci-app-shadowsocks-mod" }
 end
 
 local function is_running(name)
