@@ -252,7 +252,7 @@ start_tunnel() {
     append_bool "$server" no_delay --no-delay
     $tunnel_mptcp && append_bool "$server" mptcp --mptcp
     append_arg "$instance" local_port -l 5300
-    append_arg "$instance" destination -L 8.8.4.4:53
+    append_arg "$instance" destination -L 1.0.0.1:53
     append_arg "$instance" mtu --mtu 1492
     procd_set_param pidfile "/var/run/ss-tunnel-$server.pid"
     procd_set_param stdout 1
